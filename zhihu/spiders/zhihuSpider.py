@@ -23,8 +23,8 @@ class ZhihuspiderSpider(Spider):
                             meta={'cookiejar': response.meta['cookiejar']},
                             formdata={
                                 '_xsrf': xsrf,
-                                'email': '1735464886@qq.com',
-                                'password': 'lf1222'},
+                                'email': 'your email',
+                                'password': 'passwd'},
                             callback=self.after_login,
                             dont_filter=False)]
 
