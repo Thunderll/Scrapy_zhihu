@@ -6,7 +6,13 @@
 # http://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+import random
 
+class ProxyMiddleware(object):
+    def process_request(self, request, spider):
+        proxies = open(r'F:\python\code2\get_proxy\proxies.txt').readlines()
+        proxy = random.choice(proxies)
+        request.meta['proxy'] = proxy
 
 class ZhihuSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
